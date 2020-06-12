@@ -3,8 +3,8 @@
 
 
 # to use in a python environment
-`from feedme import feedme` <br />
-`feedme()`
+`>>> from feedme import feedme` <br />
+`>>> feedme()`
 
 # enjoy your foods
 Thanks to whoever made http://www.reciperoulette.tv/ so I could randomly get recipes in convenient JSON format.
