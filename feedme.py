@@ -39,7 +39,7 @@ def feedme():
         js = json.loads( str(soup) )
 
         try:
-            print( colored( str(js['id']) + ": " + js['name'], 'red' ) )
+            print( colored( str(js['id']) + ": " + js['name'], 'red', attrs=['bold'] ) )
 
             x = input("is sound good? [ (anything) for yes; (n) for no; (x) to exit >.<]:   ")
             if (x == "x"):
@@ -57,11 +57,11 @@ def feedme():
                 time_Preparation = str( js['time_Preparation'])
                 time_Total = str( js['time_Total'] )
 
-                print( fid + ": " + name + '\n' )
+                #print( fid + ": " + name + '\n' )
                 print( desc + "\n" )
                 print("Link: " + url )
-                print( "Serves: " + serves )
                 print( "Picture: " + pic )
+                print( "Serves: " + serves )
                 print( "Prep time: " + time_Preparation )
                 print("Cook time: " + time_Cooking )
                 print("Total time: " + time_Total )
