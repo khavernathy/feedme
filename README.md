@@ -3,7 +3,7 @@ python3 setup.py install --user
 
 
 # to use in a python environment
-`from feedme import feedme`
+`from feedme import feedme` <br />
 `feedme()`
 
 # enjoy your foods
