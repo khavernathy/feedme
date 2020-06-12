@@ -21,7 +21,7 @@ def feedme():
     maxid = 29000
 
     goodlist = []
-    for i in range(10): # u will never read 10000 recipes bro relax
+    for i in range(10000): # u will never read 10000 recipes bro relax
         rid = int( math.floor(  random.random() * maxid ) )
         url = basename + str(rid)
 
@@ -35,6 +35,7 @@ def feedme():
 
         # soupify
         soup = BeautifulSoup( page_source, 'html.parser' )
+        # jsonify the soup
         js = json.loads( str(soup) )
 
         try:
@@ -66,10 +67,8 @@ def feedme():
                 print("Total time: " + time_Total )
                 print("")
                 print("Ingredients: ")
-                c=1
                 for ing in js['ingdt']:
                     print( " - " + ing['name'] )
-                    c += 1
                 print("")
                 print("Methods: ")
                 c=1
