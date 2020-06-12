@@ -18,7 +18,7 @@ import json
 def feedme():
     basename = "http://reciperoulette.tv/getRecipeInfoPrest?id="
 
-    maxid = 29000
+    maxid = 40000
 
     goodlist = []
     for i in range(10000): # u will never read 10000 recipes bro relax
@@ -83,5 +83,6 @@ def feedme():
         except SystemExit:
             sys.exit(0)
         except:
-            print(str(rid) + " not found: skipping that binch")
+            pass
+            #print(str(rid) + " not found: skipping that binch")
 
