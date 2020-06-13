@@ -1,3 +1,7 @@
+i made this bc was hungry<br />
+it randomly generates recipes for u to use<br />
+pls enjoy your meal
+
 # to install
 `python3 setup.py install --user`
 
