@@ -17,7 +17,7 @@ import json
 def feedme():
     basename = "http://reciperoulette.tv/getRecipeInfoPrest?id="
 
-    maxid = 40000
+    maxid = 50000
 
     goodlist = []
     for i in range(10000): # u will never read 10000 recipes bro relax
