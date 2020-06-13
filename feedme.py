@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 from termcolor import colored
 
 #these should come with python i guess
-import sys
 import math
 import random
 import urllib.request as urllib2
