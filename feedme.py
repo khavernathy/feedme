@@ -14,6 +14,10 @@ import urllib.request as urllib2
 import sys
 import json
 
+# boldify
+def b(s):
+    return colored(s, attrs=['bold'])
+
 def feedme():
     basename = "http://reciperoulette.tv/getRecipeInfoPrest?id="
 
@@ -38,18 +42,18 @@ def feedme():
         js = json.loads( str(soup) )
 
         try:
-            print( colored( str(js['id']) + ": " + js['name'], 'red', attrs=['bold'] ) )
+            print( colored( str(js['id']) + ": " + js['name'].replace("&amp;","&"), 'red', attrs=['bold'] ) )
 
             x = input("is sound good? [ (anything) for yes; (n) for no; (x) to exit >.<]:   ")
             if (x == "x"):
-                print("bye hope u eat nice meal")
-                sys.exit(0)
+                print(colored("bye hope u eat nice meal", 'red'))
+                sys.exit()
             elif (x != "n"):
                 print("")
                 print("")
                 fid = str( js['id'] )
                 name = str( js['name'] )
-                desc = str( js['description'] )
+                desc = str( js['description'] ).replace("&amp;","&")
                 pic = str( js['picture'] )
                 serves = str( js['serve']) 
                 time_Cooking = str( js['time_Cooking'] )
@@ -57,30 +61,30 @@ def feedme():
                 time_Total = str( js['time_Total'] )
 
                 #print( fid + ": " + name + '\n' )
-                print( desc + "\n" )
-                print("Link: " + url )
-                print( "Picture: " + pic )
-                print( "Serves: " + serves )
-                print( "Prep time: " + time_Preparation )
-                print("Cook time: " + time_Cooking )
-                print("Total time: " + time_Total )
+                print( colored( desc, 'white', 'on_red' ) + "\n" )
+                print( b("Link: ") + url )
+                print( b("Picture: ") + pic )
+                print( b("Serves: ") + serves )
+                print( b("Prep time: ") + time_Preparation )
+                print( b("Cook time: ") + time_Cooking )
+                print( b("Total time: ") + time_Total )
                 print("")
-                print("Ingredients: ")
+                print( colored("Ingredients: ", 'green') )
                 for ing in js['ingdt']:
                     print( " - " + ing['name'] )
                 print("")
-                print("Methods: ")
+                print( colored("Methods: ", 'green') )
                 c=1
                 for meth in js['methods']:
-                    print( str(c) + ") " + meth['name'] )
+                    print( b(str(c) + ") ") + meth['name'] )
                     print("")
                     c += 1
                 
             else:
-                print("ok i skip for u")
+                print( colored( "ok i skip for u", 'red' ) )
 
         except SystemExit:
-            sys.exit(0)
+            sys.exit()
         except:
             pass
             #print(str(rid) + " not found: skipping that binch")
