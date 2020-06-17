@@ -2,7 +2,11 @@ i made this bc was hungry<br />
 it randomly generates recipes for u to use<br />
 pls enjoy your meal
 
+# to obtain
+`git clone https://github.com/khavernathy/feedme`
+
 # to install
+`cd feedme`
 `pip3 install -e .`
 
 
