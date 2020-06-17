@@ -7,6 +7,9 @@ from bs4 import BeautifulSoup
 # pip3 install termcolor
 from termcolor import colored
 
+# locals
+from feedme.writeFoods import writeFoods
+
 #these should come with python i guess
 import math
 import random
@@ -79,7 +82,12 @@ def feedme():
                     print( b(str(c) + ") ") + meth['name'] )
                     print("")
                     c += 1
-                
+       
+                toSave = input("to save recipe? [ (y) for yes; (anything) for no ]:    ")
+                if (toSave == "y"): 
+                    print( colored( "ok i save for u", 'green' ) )
+                    writeFoods( js, url, name+'.txt')
+        
             else:
                 print( colored( "ok i skip for u", 'red' ) )
 
