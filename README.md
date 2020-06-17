@@ -6,7 +6,7 @@ pls enjoy your meal
 `git clone https://github.com/khavernathy/feedme`
 
 # to install
-`cd feedme`
+`cd feedme` <br />
 `pip3 install -e .`
 
 
